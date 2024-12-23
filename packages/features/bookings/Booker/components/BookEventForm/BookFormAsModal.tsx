@@ -12,7 +12,7 @@ import { FromTime } from "../../utils/dates";
 import { useEvent } from "../../utils/event";
 
 const BookEventFormWrapper = ({ children, onCancel }: { onCancel: () => void; children: ReactNode }) => {
-  const { data } = useEvent({ includeOnlyOneHost: true });
+  const { data } = useEvent({ limitHostsToThree: true });
 
   return <BookEventFormWrapperComponent child={children} eventLength={data?.length} onCancel={onCancel} />;
 };

@@ -56,7 +56,6 @@ import {
   Badge,
   Button,
   EmailInput,
-  HeadSeo,
   useCalcomTheme,
   TextArea,
   showToast,
@@ -440,7 +439,6 @@ export default function Success(props: PageProps) {
           </Link>
         </div>
       )}
-      <HeadSeo origin={getOrgFullOrigin(orgSlug)} title={title} description={title} />
       <BookingPageTagManager
         eventType={{ ...eventType, metadata: eventTypeMetaDataSchemaWithTypedApps.parse(eventType.metadata) }}
       />

@@ -257,6 +257,7 @@ const OnboardingPage = ({
                           throw new Error(t("seats_and_no_show_fee_error"));
                         }
                       }
+
                       let updateObject: TUpdateObject = { id: value.id };
                       if (isConferencing) {
                         updateObject = {

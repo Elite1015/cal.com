@@ -61,6 +61,7 @@ import {
   showToast,
   EmptyScreen,
   Icon,
+  HeadSeo,
 } from "@calcom/ui";
 import CancelBooking from "@calcom/web/components/booking/CancelBooking";
 import EventReservationSchema from "@calcom/web/components/schemas/EventReservationSchema";
@@ -439,6 +440,7 @@ export default function Success(props: PageProps) {
           </Link>
         </div>
       )}
+      <HeadSeo origin={getOrgFullOrigin(orgSlug)} title={title} description={title} />
       <BookingPageTagManager
         eventType={{ ...eventType, metadata: eventTypeMetaDataSchemaWithTypedApps.parse(eventType.metadata) }}
       />

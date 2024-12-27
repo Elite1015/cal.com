@@ -13,7 +13,10 @@ interface BookerSeoProps {
   isSEOIndexable?: boolean;
   isTeamEvent?: boolean;
   eventData?: Omit<
-    Pick<NonNullable<Awaited<ReturnType<typeof getPublicEvent>>>, "profile" | "title" | "firstThreeUsers" | "hidden">,
+    Pick<
+      NonNullable<Awaited<ReturnType<typeof getPublicEvent>>>,
+      "profile" | "title" | "firstThreeUsers" | "hidden"
+    >,
     "profile" | "firstThreeUsers"
   > & {
     profile: {

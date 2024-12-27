@@ -13,8 +13,8 @@ interface BookerSeoProps {
   isSEOIndexable?: boolean;
   isTeamEvent?: boolean;
   eventData?: Omit<
-    Pick<NonNullable<Awaited<ReturnType<typeof getPublicEvent>>>, "profile" | "title" | "users" | "hidden">,
-    "profile" | "users"
+    Pick<NonNullable<Awaited<ReturnType<typeof getPublicEvent>>>, "profile" | "title" | "hidden">,
+    "profile"
   > & {
     profile: {
       image: string | undefined;

@@ -178,7 +178,7 @@ const EmailEmbed = ({
     ],
     shallow
   );
-  const event = useEvent({ limitHostsToThree: true });
+  const event = useEvent();
   const schedule = useScheduleForEvent({ orgSlug, eventId: eventType?.id, isTeamEvent });
   const nonEmptyScheduleDays = useNonEmptyScheduleDays(schedule?.data?.slots);
 

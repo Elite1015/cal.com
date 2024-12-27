@@ -13,11 +13,8 @@ interface BookerSeoProps {
   isSEOIndexable?: boolean;
   isTeamEvent?: boolean;
   eventData?: Omit<
-    Pick<
-      NonNullable<Awaited<ReturnType<typeof getPublicEvent>>>,
-      "profile" | "title" | "firstThreeUsers" | "hidden"
-    >,
-    "profile" | "firstThreeUsers"
+    Pick<NonNullable<Awaited<ReturnType<typeof getPublicEvent>>>, "profile" | "title" | "users" | "hidden">,
+    "profile" | "users"
   > & {
     profile: {
       image: string | undefined;
@@ -66,6 +63,7 @@ export const BookerSeo = (props: BookerSeoProps) => {
   const profileName = event?.profile.name ?? "";
   const profileImage = event?.profile.image;
   const title = event?.title ?? "";
+  console.log("event", event);
   return (
     <HeadSeo
       origin={getOrgFullOrigin(entity.orgSlug ?? null)}

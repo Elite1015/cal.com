@@ -63,7 +63,9 @@ export const BookerSeo = (props: BookerSeoProps) => {
   const profileName = event?.profile.name ?? "";
   const profileImage = event?.profile.image;
   const title = event?.title ?? "";
-  console.log("event", event);
+
+  const eventUsers = (event as { users?: { name: string; username: string }[] })?.users || [];
+
   return (
     <HeadSeo
       origin={getOrgFullOrigin(entity.orgSlug ?? null)}
@@ -73,7 +75,7 @@ export const BookerSeo = (props: BookerSeoProps) => {
         title: title,
         profile: { name: profileName, image: profileImage },
         users: [
-          ...(event?.users || []).map((user) => ({
+          ...(eventUsers || []).map((user) => ({
             name: `${user.name}`,
             username: `${user.username}`,
           })),

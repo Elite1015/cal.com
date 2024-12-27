@@ -72,7 +72,7 @@ export const BookerSeo = (props: BookerSeoProps) => {
         title: title,
         profile: { name: profileName, image: profileImage },
         users: [
-          ...(event?.users || []).map((user) => ({
+          ...(event?.firstThreeUsers || []).map((user) => ({
             name: `${user.name}`,
             username: `${user.username}`,
           })),
